@@ -1,4 +1,5 @@
 using Core.Entity;
+using Core.Entity.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -12,6 +13,9 @@ namespace Infrastructure.Data
         public DbSet<Product> Product { get; set; }
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
 
         /*
         在ASP.NET Core中，OnModelCreating是DbContext类的一个方法，用于在创建模型时配置数据模型的特定属性。

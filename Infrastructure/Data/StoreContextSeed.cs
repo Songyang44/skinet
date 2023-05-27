@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Core.Entity;
+using Core.Entity.OrderAggregate;
 
 namespace Infrastructure.Data
 {
@@ -48,6 +49,14 @@ namespace Infrastructure.Data
                 var products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 context.Product.AddRange(products);
             }
+
+            if(!context.DeliveryMethods.Any())
+            {
+                var deliveryData=File.ReadAllText("../Infrastructure/Data/SeedData/delivery.json");
+                var methods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+                context.DeliveryMethods.AddRange(methods);
+            }
+
 
             /*
             这段代码主要的作用是在DbContext中检查是否有未保存的更改，如果有，则将更改保存到数据库中。
