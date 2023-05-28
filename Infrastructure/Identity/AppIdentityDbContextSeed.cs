@@ -25,7 +25,7 @@ namespace Infrastructure.Identity
                         Street = "10 The Street",
                         City = "Hamilton",
                         State = "NZ",
-                        ZipCode = "3210"
+                        Zipcode = "3210"
                     }
                 };
 
