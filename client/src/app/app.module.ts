@@ -25,6 +25,7 @@ import { OrderDetailedComponent } from './order-detailed/order-detailed.componen
     CoreModule,
     HomeModule
   ],
+  exports:[CoreModule, HomeModule],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi:true},
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi:true},
